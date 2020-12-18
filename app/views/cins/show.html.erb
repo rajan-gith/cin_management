@@ -1,0 +1,51 @@
+<h1>Cins details</h1>
+<% if @cin %>
+<div class="row">
+  <div class="col-md-3">
+    listing:
+  </div>
+  <div class="col-md-9">
+    <%= @cin.number[0].downcase == 'l' ? true : false %>
+  </div>
+
+  <div class="col-md-3">
+    industry:
+  </div>
+  <div class="col-md-9">
+    <%= industry_type[@cin.number[1..2].to_i] %>
+  </div>
+
+  <div class="col-md-3">
+    state:
+  </div>
+  <div class="col-md-9">
+    <%= get_state_name(@cin.number[6]+@cin.number[7]) %>
+  </div>
+
+  <div class="col-md-3">
+    year:
+  </div>
+  <div class="col-md-9">
+    <%= @cin.number[8..11] %>
+  </div>
+
+  <div class="col-md-3">
+    ownership:
+  </div>
+  <div class="col-md-9">
+    <%= ownership_list[@cin.number[12..14].to_sym] %>
+  </div>
+
+  <div class="col-md-3">
+    registration_no:
+  </div>
+  <div class="col-md-9">
+    <%= @cin.number[15..20] %>
+  </div>
+
+</div>
+
+
+<% else %>
+<h5>CIN not found</h5>
+<% end %>

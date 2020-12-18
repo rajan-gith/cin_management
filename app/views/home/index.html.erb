@@ -1,0 +1,7 @@
+<h1>Welcome to cin directory from MCA</h1>
+<h3>Search CIN here</h3>
+
+<%= form_for @cin, url: create_cin_path() do |f| %>
+  <%= f.text_field :number %>
+  <%= f.submit 'search' %>
+<% end %>
