@@ -1,8 +1,9 @@
 <h1>Histories#index</h1>
-<ol>
+<ul>
   <% @histories.each do |histoy| %>
   <li>
     <a href="<%= show_cin_path(id: histoy.cin_id) %>"><%= histoy.cin.number %>  Searched on: <%= histoy.created_at.strftime("%l:%M %p %d/%m/%Y") %></a>
   </li>
   <% end %>
-</ol>
+</ul>
+<%= will_paginate @histories %>
